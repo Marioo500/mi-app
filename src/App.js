@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import "./Styles/App.css";
+import travel_01 from "./assets/image-01.jpg";
+import Hero from "./Components/Hero";
+import Bar from "./Components/Bar"
+import Slider from "./Components/Slider"
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div className='App'>
+      <Bar />
+      <Hero imageSrc={travel_01} 
+      section={"main_section"}/>
+      <Slider
+      section={"Equiment"}
+      imageSrc={travel_01}
+      titulo={"Equipamiento"}
+      subtitulo={"Mini explorador"}
 
-export default App;
+      />
+      <Slider
+      section={"About Us"}
+      imageSrc={travel_01}
+      titulo={"Sobre Nosotros"}
+      subtitulo={"Mini explorador2"}
+      flipped={true}
+      />
+
+      <Slider
+      section={"Products"}
+      imageSrc={travel_01}
+      titulo={"Productos"}
+      subtitulo={"Mini explorador2"}
+      />
+      
+    </div>
+      
+  );
+
+}
